@@ -1,0 +1,98 @@
+.formControl.error input,
+.formControl.error textarea {
+    border: 1px solid red;
+    outline: none;
+}
+
+.messageError {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-left: 4px solid #9e9e9e;
+    color: #333;
+    font-size: 14px;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+.formSummaryError{
+    background: #333;
+    color: #ff5555;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    max-width: 400px;
+    margin: 10px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.authForm{
+    background: #222;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.authForm input[type="email"],
+.authForm input[type="password"]{
+    min-width: 350px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    align-self: center;
+}
+.rememberMeBlock{
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.authForm input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: #333;
+    cursor: pointer;
+    margin: 5px 5px;
+    text-align: left;
+}
+
+.rememberMe{
+    font-size: 14px;
+    color: #bbb;
+}
+
+.authForm button {
+    background: linear-gradient(to right, #444, #222);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

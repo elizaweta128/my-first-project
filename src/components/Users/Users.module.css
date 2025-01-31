@@ -1,0 +1,13 @@
+.imageBlock img{
+    width: 150px;
+    height: 150px;
+}
+
+.selectedPage{
+    font-weight: bold;
+}
+
+.preloader{
+    width: 100px;
+    text-align: center;
+}

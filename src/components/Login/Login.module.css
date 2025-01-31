@@ -1,0 +1,13 @@
+.loginPage{
+    min-height: 100vh;
+}
+
+.loginHeader{
+    font-size: 24px;
+    font-weight: 900;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 30px 0 10px 0;
+}
