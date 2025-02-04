@@ -27,6 +27,7 @@ const Login = lazy(async () => {
     return {default: module.default};
 })
 //task_55
+//task_57
 class App extends React.Component {
     componentDidMount() {
         this.props.initializeApp();
