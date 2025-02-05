@@ -14,6 +14,8 @@ import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
 import {lazy} from 'react';
 
+//hello
+
 const DialogsContainer = lazy(async () => {
     const module = await import("./components/Dialogs/DialogsContainer");
     return {default: module.default};
