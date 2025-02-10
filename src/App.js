@@ -1,7 +1,7 @@
 import './App.css';
 import React, {Suspense} from "react";
 import Nav from "./components/Nav/Nav";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import Home from "./components/Home/Home";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
@@ -39,26 +39,24 @@ class App extends React.Component {
             return <Preloader/>
         }
         return (
-            <BrowserRouter>
-                <div className="app-wrapper">
-                    <HeaderContainer/>
-                    <Nav/>
-                    <div className="app-wrapper-content">
-                        <Suspense fallback={<Preloader/>}>
+            <div className="app-wrapper">
+                <HeaderContainer/>
+                <Nav/>
+                <div className="app-wrapper-content">
+                    <Suspense fallback={<Preloader/>}>
                         <Routes>
                             <Route path="/" element={<Home/>}/>
-                            <Route path="/profile/:userId?" element={<ProfileContainerSuper />}/>
-                            <Route path="/dialogs" element={<DialogsContainer />}/>
-                            <Route path="/users" element={<UsersContainer />}/>
+                            <Route path="/profile/:userId?" element={<ProfileContainerSuper/>}/>
+                            <Route path="/dialogs" element={<DialogsContainer/>}/>
+                            <Route path="/users" element={<UsersContainer/>}/>
                             <Route path="/login" element={<Login/>}/>
                             <Route path="/news" element={<News/>}/>
                             <Route path="/music" element={<Music/>}/>
                             <Route path="/settings" element={<Settings/>}/>
                         </Routes>
-                        </Suspense>
-                    </div>
+                    </Suspense>
                 </div>
-            </BrowserRouter>
+            </div>
         );
     }
 }
@@ -74,9 +72,11 @@ let AppContainer = connect(mapStateToProps, {initializeApp})(App);
 
 const MainApp = () => {
     return <React.StrictMode>
-        <Provider store={store}>
-            <AppContainer/>
-        </Provider>
+        <HashRouter>
+            <Provider store={store}>
+                <AppContainer/>
+            </Provider>
+        </HashRouter>
     </React.StrictMode>
 }
 

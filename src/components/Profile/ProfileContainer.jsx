@@ -4,26 +4,26 @@ import {connect} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
 import {
     getProfileStatus,
-    getUserProfile,
+    getUserProfile, savePhoto,
     updateProfileStatus
 } from "../../redux/profile-reducer";
 import {compose} from "redux";
 
 
-
 const ProfileContainer = (props) => {
+    const {authUserId, getUserProfile, getProfileStatus} = props;
     const params = useParams();
     const navigate = useNavigate();
     useEffect(() => {
-        let userId = params.userId || props.authUserId;
+        let userId = params.userId || authUserId;
         if (!userId) return navigate("/login");
-        props.getUserProfile(userId);
-        props.getProfileStatus(userId);
-    }, [params.userId, props.authUserId, navigate]);
+        getUserProfile(userId);
+        getProfileStatus(userId);
+    }, [params.userId, authUserId, navigate, getUserProfile, getProfileStatus]);
     return (
-        <Profile {...props} profile={props.profile}/>
+        <Profile {...props}
+                 isOwner={!params.userId}/>
     )
-
 
 
 }
@@ -38,9 +38,7 @@ let mapStateToProps = (state) => {
 }
 
 
-
-
 export default compose(
-    connect(mapStateToProps, {getUserProfile,getProfileStatus, updateProfileStatus}),
-   )(ProfileContainer);
+    connect(mapStateToProps, {getUserProfile, getProfileStatus, updateProfileStatus, savePhoto}),
+)(ProfileContainer);
 
